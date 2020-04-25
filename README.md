@@ -40,3 +40,4 @@ Submit on BCS:
 - Setup HTML body for display and testing
 - Generated visual styles in CSS
 - jQuery setup in JS
+- added a new js file to simply for QnA to change easily.
