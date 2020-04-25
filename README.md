@@ -36,3 +36,7 @@ Submit on BCS:
 ## Narrative on steps taken.
 
 - Setup Repo to start upload for back ups and live testings.
+- Setup HTML for bootstrap and jQuery
+- Setup HTML body for display and testing
+- Generated visual styles in CSS
+- jQuery setup in JS

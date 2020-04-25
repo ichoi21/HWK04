@@ -1,1 +1,2 @@
-console.log("hello world");
+//jQuery code begins with $
+$(docment).ready(function () {});

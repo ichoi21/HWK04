@@ -3,11 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <title>POP QuizZzZz!</title>
   </head>
   <body>
-    <div id="todoContainer"></div>
+    <header>
+      <div class="jumbotron text-center bg-secondary text-light rounded-0">
+        <h2>POP QuizZzZz!</h2>
+      </div>
+    </header>
+    <article class="wrapper">
+      <div id="quiz" class="row card">
+        <div class="col-sm-12 text-center">
+          <h3>How Current Are you??</h3>
+          <br />
+          <p>Quiz Criteria & Instruction goes here</p>
+          <button id="btnStart" class="btn btn-outline-success m-2">
+            Let's Start
+          </button>
+          <button id="btnScore" class="btn btn-outline-info m-2">
+            Scores
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.slim.js"
+      integrity="sha256-sCexhaKpAfuqulKjtSY7V9H7QT0TCN90H+Y5NlmqOUE="
+      crossorigin="anonymous"
+    ></script>
     <script src="./app.js"></script>
   </body>
 </html>
