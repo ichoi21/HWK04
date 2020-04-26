@@ -46,3 +46,4 @@ Submit on BCS:
 - local storage memory used.
 - broke out all 'div's brackets to fix formatting issues
 - added more bootstrap features.
+- added footer to showcase previous homework skills.
