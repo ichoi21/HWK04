@@ -34,6 +34,27 @@ const Questions = [
     "Jordan Love",
     "Henry Ruggs III",
   ],
+  [
+    "Q6: Which NBA player halted the '19-'20 Season?",
+    "Kevin Durant",
+    "Donavan Mitchell",
+    "Draymond Green",
+    "Rudy Gobert",
+  ],
+  [
+    "Q7: Which Bio-Pharm firm gave hopes to treat COVID-19?",
+    "Biogen Inc.",
+    "Gilead Sciences, Inc.",
+    "Moderna, Inc.",
+    "Regeneron PhX, Inc.",
+  ],
+  [
+    "Q8: Which Sector crashed the week of 4/20/20?",
+    "Energy",
+    "Materials",
+    "Financials",
+    "Consumer discretionary",
+  ],
 ];
 const Answers = [
   "Actaeon",
@@ -41,4 +62,7 @@ const Answers = [
   "Miller Brewing Co.",
   "Kim Jong-un",
   "Javon Kinlaw",
+  "Rudy Gobert",
+  "Gilead Sciences, Inc.",
+  "Energy",
 ];

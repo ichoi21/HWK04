@@ -1,8 +1,8 @@
 //jQuery code begins with $
+var secondsLeft = 70;
+var timerInterval;
 var score = 0;
 var questionIndex;
-var secondsLeft = 45;
-var timerInterval;
 
 //need to add JSON parse to use LocalStorage for Scores
 try {
@@ -12,19 +12,20 @@ try {
 }
 var rankLength;
 
+//sorts out Questions Array from question and choices.
 function refreshQ() {
   $("#header").html("");
   $("#body").html("");
   for (var i = 0; i < Object.keys(Questions[questionIndex]).length; i++) {
     if (i === 0) {
-      $("#header").append(`
+      $("#header").prepend(`
         <h5 data-id=${i}>
           ${Questions[questionIndex][i]}
         </h5>`);
     } else {
       $("#body").attr("class", "col-md-12 text-center");
       $("#body").append(`
-        <h5 id="btnAnswer">${Questions[questionIndex][i]}</h5><br>
+        <h5 id="btnAnswer" class="btn btn-outline-primary w-50">${Questions[questionIndex][i]}</h5><br>
       `);
     }
   }
@@ -49,7 +50,7 @@ function showScores() {
   $("#header").html("");
   $("#body").attr("class", "col-md-12 text-center");
   $("#body").html(`
-    <table id="scoreTable" class="table table-striped table-dark">
+    <table id="scoreTable" class="table table-striped table-dark table-hover">
       <thead>
         <tr>
           <th scope="col">Rank</th>
@@ -106,7 +107,7 @@ $(document).on("click", "#btnScore", function () {
 // #btnAnswer
 $(document).on("click", "#btnAnswer", function () {
   if ($(this).text() === Answers[questionIndex]) {
-    score += 20;
+    score += 12.5;
     showAlert("NICE!", "success text-center");
   } else {
     showAlert("NOPE!", "danger");
@@ -127,7 +128,7 @@ function sendMessage(str) {
   $("#header").html("");
   $("#body").attr("class", "col-md-12 text-center");
   $("#body").html(
-    `<h2>You scored ${score} points!</h2>
+    `<h2>You scored a ${score}%!</h2>
       <br />
       <form>
         <input
@@ -167,7 +168,7 @@ $(document).on("click", "#btnSubmit", function (e) {
   }
 });
 
-// Reset Ranks/Scores Array (clear LocalStorage) #reset
+// #reset clears localStorage
 $(document).on("click", "#reset", function () {
   window.localStorage.clear();
   $("").html("");
