@@ -5,12 +5,16 @@ var secondsLeft = 45;
 var timeInterval;
 
 //need to add JSON parse to use LocalStorage for Scores
+try {
+  var rankArray = JSON.parse(window.localStorage.getItem("QuizScore"));
+} catch {
+  var rankArray = [{}];
+}
+var rankLength;
 
-// create a function to refresh the html on the screen each time the question is changed
 function refreshQ() {
   $("#header").html("");
   $("#body").html("");
-  // prepend each item in the object to the screen
   for (var i = 0; i < Object.keys(Questions[questionIndex]).length; i++) {
     if (i === 0) {
       $("#header").append(`
@@ -26,7 +30,7 @@ function refreshQ() {
   }
 }
 
-// Need to create a timer for quiz
+// timer for quiz
 function countdown() {
   var timer = document.querySelector("#timeclock");
   timerInterval = setInterval(function () {
@@ -51,7 +55,7 @@ $(document).on("click", "#btnStart", function () {
   countdown();
 });
 // console.log(timeclock)
-$(document).on("click", "#scoreBtn", function () {
+$(document).on("click", "#btnScore", function () {
   showScores();
 });
 
@@ -75,12 +79,13 @@ $(document).on("click", "#btnAnswer", function () {
   }
 });
 
-//After Quiz is done, need a command to record score
+//After Quiz is done, need a command to record score and generate score list
 function showScores() {
-  $("#header").html(`<div id="header" class="col-md-12 text-center"></div>`);
-  $("#body").attr("class", "col-md-12 text-left");
+  $("#timeclock").html("");
+  $("#header").html("");
+  $("#body").attr("class", "col-md-12 text-center");
   $("#body").html(`
-    <table id="scoreTable" class="table table-striped">
+    <table id="scoreTable" class="table table-striped table-dark">
       <thead>
         <tr>
           <th scope="col">Rank</th>
@@ -95,6 +100,7 @@ function showScores() {
       Return
     </a>
     <button id="reset" class="btn btn-outline-danger m-2">Reset</button>`);
+
   clearInterval(timerInterval);
   rankArray.sort(function (a, b) {
     return b.score - a.score;
@@ -113,6 +119,27 @@ function showScores() {
     $(`#row-${i}`).append(`<td>${rankArray[i].name}</td>`);
     $(`#row-${i}`).append(`<td>${rankArray[i].score}</td>`);
   }
+}
+
+function sendMessage(str) {
+  $("#header").html(`<h2 class="text-center col-md-12">${str}</h2>`);
+  $("#body").attr("class", "col-md-12 text-center");
+  $("#body").html(
+    `<h2>You scored ${score} points!</h2>
+      <br />
+      <form>
+        <input
+          type="text"
+          name="alias"
+          id="alias"
+          autofocus
+          placeholder="Enter an Alias"/>
+        <button id="btnSubmit" class="btn btn-outline-primary">Save</button>
+      </form>
+      <br />
+      <form><button id="scoreBtn" class="btn btn-outline-success">Don't Record</button>
+      <button type="submit" class="btn btn-outline-danger">Try Again</button></form>`
+  );
 }
 
 function showAlert(str, type) {
