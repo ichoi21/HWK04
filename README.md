@@ -42,3 +42,4 @@ Submit on BCS:
 - jQuery setup in JS
 - added a new js file to simply for QnA to change easily.
 - set strategy for app.js
+- added show alert, countdown timer, btns functional.
