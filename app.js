@@ -124,6 +124,7 @@ $(document).on("click", "#btnAnswer", function () {
 
 function sendMessage(str) {
   $("#timeclock").html("You finished with " + secondsLeft + " seconds left!");
+  $("#header").html("");
   $("#body").attr("class", "col-md-12 text-center");
   $("#body").html(
     `<h2>You scored ${score} points!</h2>

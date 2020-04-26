@@ -23,15 +23,15 @@ const Questions = [
   [
     "Q4: Who is the current Supreme Leader of North Korea?",
     "Kim Jong-chul",
-    "Kim Jong-nam",
-    "Kim Jong-il",
     "Kim Jong-un",
+    "Kim Jong-il",
+    "Kim Jong-nam",
   ],
   [
     "Q5: Who did the San Francisco 49ers draft in 2020?",
-    "Jordan Love",
-    "Bryan Edwards",
     "Javon Kinlaw",
+    "Bryan Edwards",
+    "Jordan Love",
     "Henry Ruggs III",
   ],
 ];

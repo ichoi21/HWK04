@@ -44,3 +44,4 @@ Submit on BCS:
 - set strategy for app.js
 - added show alert, countdown timer, btns functional.
 - local storage memory used.
+- broke out all 'div's brackets to fix formatting issues.
