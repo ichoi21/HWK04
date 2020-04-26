@@ -1,4 +1,4 @@
-var Questions = [
+const Questions = [
   [
     "Q1: In Greek mythology, who was the hunter who was torn apart by Artemis' dog?",
     "Pluto",
@@ -35,7 +35,7 @@ var Questions = [
     "Henry Ruggs III",
   ],
 ];
-var Answers = [
+const Answers = [
   "Actaeon",
   ">>1 Million",
   "Miller Brewing Co.",

@@ -3,43 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>POP QuizZzZz!</title>
+    <title>POP QuizZzZ</title>
   </head>
   <body>
-    <header>
-      <div class="jumbotron text-center bg-secondary text-light rounded-0">
-        <h2>POP QuizZzZz!</h2>
+    <main>
+      <div>
+        <header class="jumbotron text-center bg-secondary text-light rounded-0">
+          <h1>POP! Quiz</h1>
+          <nav id="timeclock"></nav>
+        </header>
       </div>
-    </header>
-    <article class="wrapper">
-      <div id="quiz" class="row card">
-        <div class="col-sm-12 text-center">
-          <h3>How Current Are you??</h3>
-          <br />
-          <p>Quiz Criteria & Instruction goes here</p>
-          <button id="btnStart" class="btn btn-outline-success m-2">
-            Let's Start
-          </button>
-          <button id="btnScore" class="btn btn-outline-info m-2">
-            Scores
-          </button>
-        </div>
-      </div>
-    </article>
+      <article class="container">
+          <div id="header" class="row col-sm-12 text-center m-2"></div>
+          <div id="body" class="row col-md-12 text-center">
+            Let's see how CURRENT you are!
+            <br />
+            <br />
+              There are 5 questions and you will get 45 sec to
+              answer them all. 
+              <br />
+              If you get one wrong, you lose time!
+              <br /> I
+              If the time reaches zero, it's game over!
+              <br />
+              <br />
+            </p>
+            <p>
+              <button id="startBtn" class="btn btn-outline-success m-2 text-center">
+                Begin!
+              </button>
+
+              <button id="scoreBtn" class="btn btn-outline-info m-2 text-center">
+                Scores
+              </button>
+            </p>
+          </div>
+          <div id="footer" class="row col-sm-10 text-center"></div>
+      </article>
+    </main>
 
     <script
       src="https://code.jquery.com/jquery-3.5.0.slim.js"
       integrity="sha256-sCexhaKpAfuqulKjtSY7V9H7QT0TCN90H+Y5NlmqOUE="
       crossorigin="anonymous"
     ></script>
-    <script src="./app.js"></script>
     <script src="./qna.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
