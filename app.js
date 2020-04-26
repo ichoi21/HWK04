@@ -30,6 +30,20 @@ $(document).ready(function () {
   // #btnStart
   // #btnScore
 
+  $(document).on("click", "#btnStart", function () {
+    questionIndex = 0;
+    refreshQ();
+    $("#timeclock").append(
+      `<div class="col-sm-12"><p id="timer">45 Seconds GO!</p></div>`
+    );
+    $("#footer").append(`<div id="alert" class="col-sm-12">`);
+    countdown();
+  });
+  
+  // $(document).on("click", "#scoreBtn", function () {
+  //   showHighscores();
+  // });
+
   // function during quiz
 
   //After Quiz is done, need a command to record score
