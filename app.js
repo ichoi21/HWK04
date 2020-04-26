@@ -27,27 +27,42 @@ $(document).ready(function () {
   function showHighscores() {}
 
   // function to start the quiz and to show Scores
-  // #btnStart
-  // #btnScore
-
+  // #btnStart & #btnScore
   $(document).on("click", "#btnStart", function () {
     questionIndex = 0;
     refreshQ();
     $("#timeclock").append(
       `<div class="col-sm-12"><p id="timer">45 Seconds GO!</p></div>`
     );
-    $("#footer").append(`<div id="alert" class="col-sm-12">`);
+    $("#footer").append(`<div id="alert" class="col-md-12">`);
     countdown();
   });
-  
+  // console.log(timeclock)
   // $(document).on("click", "#scoreBtn", function () {
   //   showHighscores();
   // });
 
-  // function during quiz
+  // function during quiz after each question - show/hide alert
+  // #btnAnswer
+  $(document).on("click", "#btnAnswer", function () {
+    if ($(this).text() === Answers[questionIndex]) {
+      score += 20;
+      showAlert("NICE!", "success text-center");
+    } else {
+      showAlert("NOPE! -5 seconds", "danger");
+      secondsLeft -= 5;
+    }
+  
+    if (questionIndex < Questions.length - 1) {
+        questionIndex++;
+      refreshQ();
+      } else {
+      sendMessage("");
+      clearInterval(timerInterval);
+    }
+  });
 
   //After Quiz is done, need a command to record score
   function recordScore() {}
-
 
   // bonus to reset Scores (clear LocalStorage)
